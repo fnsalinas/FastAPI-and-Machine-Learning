@@ -10,12 +10,13 @@ token = token_path.read_text().strip()
 
 pipe = StableDiffusionPipeline.from_pretrained(
     "CompVis/stable-diffusion-v1-4",
-    revision = "fp16",
-    torch_dtype = torch.float16,
-    use_auth_token = token
-    )
+    revision="fp16",
+    torch_dtype=torch.float16,
+    use_auth_token=token
+)
 
 pipe.to("cuda")
+
 
 def obtain_image(
     prompt: str,
@@ -24,13 +25,14 @@ def obtain_image(
     num_inferecnce_steps: int = 50,
     guidance_scale: float = 7.5
 ) -> Image:
-    generator = None if seed is None else torch.Generator("cuda").manual_seed(seed)
+    generator = None if seed is None else torch.Generator(
+        "cuda").manual_seed(seed)
     print(f"Using devuce: {pipe.device}")
     image: Image = pipe(
         prompt,
-        guidance_scale = guidance_scale,
-        num_inferecnce_steps = num_inferecnce_steps,
-        generator = generator
+        guidance_scale=guidance_scale,
+        num_inferecnce_steps=num_inferecnce_steps,
+        generator=generator
     ).images[0]
     return image
 
