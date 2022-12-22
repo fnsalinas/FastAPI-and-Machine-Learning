@@ -38,4 +38,4 @@ def obtaiun_image(
     ).images[0]
     return image
 
-image = obtaiun_image(prompt, num_inferecnce_steps = 5, seed = 1024)
+# image = obtaiun_image(prompt, num_inferecnce_steps = 5, seed = 1024)

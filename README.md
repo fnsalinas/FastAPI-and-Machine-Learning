@@ -7,3 +7,4 @@
     line of code: StableDiffusionPipeline.from_pretrained
     TypeError: getattr(): attribute name must be string
     Solution: install diffusers==0.8.0 not diffusers==0.4.0
+- Path to the Api documentation: http://127.0.0.1:8000/docs#/
