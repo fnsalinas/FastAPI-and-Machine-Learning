@@ -19,7 +19,7 @@ pipe.to("cuda")
 
 prompt = "a photograph of an astronaut riding a horse"
 
-image = pipe(prompt)["sample"][0]
+# image = pipe(prompt)["sample"][0]
 
 def obtaiun_image(
     prompt: str,
@@ -28,7 +28,7 @@ def obtaiun_image(
     num_inferecnce_steps: int = 50,
     guidance_scale: float = 7.5
 ) -> Image:
-    generator = None if seed is None else torch.Generator("cuda").manual_seed(1024)
+    generator = None if seed is None else torch.Generator("cuda").manual_seed(seed)
     print(f"Using devuce: {pipe.device}")
     image: Image = pipe(
         prompt,
@@ -37,3 +37,5 @@ def obtaiun_image(
         generator = generator
     ).images[0]
     return image
+
+image = obtaiun_image(prompt, num_inferecnce_steps = 5, seed = 1024)
