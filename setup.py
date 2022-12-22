@@ -2,7 +2,7 @@
 from setuptools import setup, find_packages
 
 setup(
-    name='FastAPI-and-Machine-Learning',
+    name='FastAPI_and_Machine_Learning',
     version='1.0',
     description='Testing the FastAPI with a Machine Learning project.',
     author='Fabio Salinas',

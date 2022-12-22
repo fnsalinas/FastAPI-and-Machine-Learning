@@ -1,0 +1,19 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+pandas = "*"
+tabulate = "*"
+matplotlib = "*"
+plotly = "*"
+seaborn = "*"
+nbformat = "*"
+ipywidgets = "*"
+fastapi-and-machine-learning = {editable = true, path = "."}
+
+[dev-packages]
+
+[requires]
+python_version = "3.8"
