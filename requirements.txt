@@ -6,7 +6,7 @@ seaborn
 nbformat
 ipywidgets
 fastapi[all]
-diffusers==0.4.0
+diffusers==0.8.0
 transformers
 scipy
 ftfy
