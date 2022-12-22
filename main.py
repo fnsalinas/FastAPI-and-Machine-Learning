@@ -1,7 +1,8 @@
 from typing import List
 from fastapi import FastAPI
+from fastapi.responses import FileResponse
 from pydantic import BaseModel
-
+from ml import obtain_image
 
 app = FastAPI()
 
@@ -27,5 +28,6 @@ def create_item(item: Item):
 
 @app.get("/generate")
 def generate_image(prompt: str):
-    return {"prompt": prompt}
-
+    image = obtain_image(prompt, num_inferecnce_steps = 5, seed = 1024)
+    image.save("image.png")
+    return FileResponse("image.png")

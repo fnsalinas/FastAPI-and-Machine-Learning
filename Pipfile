@@ -21,6 +21,7 @@ mypy = "*"
 ruff = "*"
 black = "*"
 ipykernel = "*"
+accelerate = "*"
 
 [dev-packages]
 
