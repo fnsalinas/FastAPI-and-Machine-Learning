@@ -12,6 +12,11 @@ seaborn = "*"
 nbformat = "*"
 ipywidgets = "*"
 fastapi-and-machine-learning = {editable = true, path = "."}
+fastapi = {extras = ["all"], version = "*"}
+diffusers = "==0.4.0"
+transformers = "*"
+scipy = "*"
+ftfy = "*"
 
 [dev-packages]
 
